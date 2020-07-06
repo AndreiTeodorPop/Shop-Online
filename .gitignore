@@ -1,4 +1,8 @@
 HELP.md
+mvnw
+mvnw.cmd
+.gitignore
+
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
@@ -14,6 +18,7 @@ target/
 .sts4-cache
 
 ### IntelliJ IDEA ###
+.mvn
 .idea
 *.iws
 *.iml
