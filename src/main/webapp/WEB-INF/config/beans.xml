@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="productDAO" class="com.shop.dao.impl.ProductDAOImpl">
+        <constructor-arg name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+    </bean>
+
+    <bean id="categoryDAO" class="com.shop.dao.impl.CategoryDAOImpl">
+        <constructor-arg name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+    </bean>
+
+    <alias name="productDAO" alias="product-DAO"/>
+    <alias name="categoryDAO" alias="category-DAO"/>
+
+    <bean id="productService" class="com.shop.service.impl.ProductServiceImpl">
+        <constructor-arg name="productDAO" ref="product-DAO"/>
+    </bean>
+
+    <bean id="categoryService" class="com.shop.service.impl.CategoryServiceImpl">
+        <constructor-arg name="categoryDAO" ref="category-DAO"/>
+    </bean>
+
+</beans>
